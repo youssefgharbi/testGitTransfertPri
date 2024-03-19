@@ -1,0 +1,61 @@
+<div class="container-fluid parent-container ">
+    <article class="cardAddEntreprise">
+        <div class="icon-container">
+            <i class="fas fa-plus-circle iconCardAdd" (click)="showDialogAddEntreprise()"
+                (mouseleave)="changeColor(false)" (mouseover)="changeColor(true)"
+                style="font-size: 160px;color: grey;"></i>
+        </div>
+        <div class="textContainer">
+            <span class="textAddCard" [ngClass]="{'changeColorText':changeColorText}">
+                Add an entreprise
+            </span>
+        </div>
+    </article>
+    <article class="card">
+        <img class="card__background" src="https://i.imgur.com/QYWAcXk.jpeg"
+            alt="Photo of Cartagena's cathedral at the background and some colonial style houses" width="1920"
+            height="2193" />
+        <div class="card__content | flow">
+            <div class="card__content--container | flow">
+                <h2 class="card__title">Colombia</h2>
+                <p class="card__description">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum in
+                    labore laudantium deserunt fugiat numquam.
+                </p>
+            </div>
+            <button class="card__button">Read more</button>
+        </div>
+    </article>
+
+</div>
+<p-dialog [(visible)]="addEntrepriseDialogVisible" [style]="{width: '50vw'}">
+    <ng-template pTemplate="header">
+        <h2 style="color: navy;">Add entreprise</h2>
+    </ng-template>
+    <ng-template pTemplate="content">
+        <div class="inputGroup">
+            <div class="input">
+                <div class="label" for="username">Entreprise Name</div>
+                <input pInputText id="username" aria-describedby="username-help" />
+            </div>
+            <div class="input">
+                <div class="label" for="username">Phone Number</div>
+                <input pInputText id="username" aria-describedby="username-help" />
+            </div>
+            <div class="input">
+                <div class="label" for="username">Email</div>
+                <input pInputText id="username" aria-describedby="username-help" />
+            </div>
+            <div class="input">
+                <div class="label" for="username">Link</div>
+                <input pInputText id="username" aria-describedby="username-help" />
+            </div>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="footer">
+        <div class="buttonContainerDialog">
+            <p-button label="Cancel" (onClick)="hideDialogAddEntreprise()" severity="danger"></p-button>
+            <p-button label="Save" severity="success"></p-button>
+        </div>
+    </ng-template>
+</p-dialog>
